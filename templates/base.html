@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,20 @@
     <title>{% block 'titulo' %}Base{% endblock %}</title>
 
     {% block 'head' %}
-        
+
     {% endblock %}
 </head>
+
 <body>
+    {% if user.is_authenticated %}
+    <nav style="background-color: #27DB8F;" class="navbar navbar-expand-lg navbar-dark">
+        <a style="font-weight: bold" class="navbar-brand" href="#">NUTRI LAB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    {% endif %}
     {% block 'body' %}{% endblock%}</title>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
